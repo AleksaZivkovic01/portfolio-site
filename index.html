@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lazar Nikolic — Accounting & Accounts Payables</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['system-ui', 'SF Pro Text', 'Segoe UI', 'sans-serif'],
+          },
+          colors: {
+            'slate-deep': '#020617',
+          },
+          boxShadow: {
+            glass: '0 24px 60px rgba(15,23,42,0.9)',
+            card: '0 18px 40px rgba(15,23,42,0.9)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="min-h-screen font-sans text-slate-100 antialiased bg-slate-deep">
+
+  <!-- Main wrapper -->
+  <div class="relative min-h-screen">
+    <!-- Glow overlays -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+      <div class="absolute -left-32 top-10 h-72 w-72 rounded-full bg-cyan-500/25 blur-3xl"></div>
+      <div class="absolute right-0 top-40 h-80 w-80 rounded-full bg-indigo-500/30 blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-emerald-500/20 blur-3xl"></div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-30 border-b border-slate-800/70 bg-slate-950/70 backdrop-blur-xl">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <!-- Logo -->
+        <a href="#home" class="flex items-center gap-2">
+          <div class="relative flex h-9 w-9 items-center justify-center rounded-2xl bg-gradient-to-tr from-indigo-500 to-cyan-400 shadow-glass">
+            <span class="text-base font-semibold tracking-tight">LN</span>
+            <span class="absolute inset-[1px] rounded-2xl border border-white/10"></span>
+          </div>
+          <div class="flex flex-col leading-tight">
+            <span class="text-sm font-semibold tracking-tight">Lazar Nikolic</span>
+            <span class="text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400">
+              Accounting &amp; Accounts Payables
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop links -->
+        <div class="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
+          <a href="#home" class="hover:text-white transition-colors">Home</a>
+          <a href="#services" class="hover:text-white transition-colors">Services</a>
+          <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+
+        <!-- CTA -->
+        <div class="hidden md:flex">
+          <a href="#contact"
+             class="inline-flex items-center gap-2 rounded-full border border-indigo-400/80 bg-gradient-to-r from-indigo-600 to-cyan-500 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-white shadow-card transition hover:shadow-[0_18px_45px_rgba(79,70,229,0.8)]">
+            <span class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_16px_rgba(52,211,153,0.9)]"></span>
+            Schedule a call
+          </a>
+        </div>
+
+        <!-- Mobile menu button (simple scroll, no toggle) -->
+        <div class="flex items-center gap-3 md:hidden">
+          <a href="#contact"
+             class="inline-flex items-center gap-2 rounded-full border border-indigo-400/80 bg-gradient-to-r from-indigo-600 to-cyan-500 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white shadow-card">
+            Contact
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main class="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pt-14" id="home">
+      <!-- Hero -->
+      <section class="fade-section mb-16 md:mb-20 lg:mb-24" data-animate>
+        <div class="glass relative overflow-hidden rounded-3xl px-5 py-7 shadow-glass sm:px-8 sm:py-9 lg:px-10 lg:py-10">
+          <!-- subtle grid overlay -->
+          <div class="pointer-events-none absolute inset-0 opacity-60 mix-blend-soft-light">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_0_0,rgba(148,163,184,0.45),transparent_55%)]"></div>
+            <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,23,42,0.85),rgba(15,23,42,0.9))]"></div>
+          </div>
+
+          <div class="relative grid gap-10 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] md:items-center">
+            <!-- Hero text -->
+            <div class="space-y-5 md:space-y-6">
+              <div class="inline-flex items-center gap-2 rounded-full border border-cyan-300/40 bg-slate-900/60 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-cyan-200">
+                <span class="relative inline-flex h-2 w-2">
+                  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+                </span>
+                Freelance Accounting Specialist
+              </div>
+
+              <h1 class="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-[2.8rem] lg:leading-tight">
+                Practical accounting support for
+                <span class="bg-gradient-to-r from-indigo-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
+                  small businesses &amp; freelancers.
+                </span>
+              </h1>
+
+              <p class="max-w-xl text-sm text-slate-300 sm:text-[15px]">
+                I’m an accountant and accounts payable specialist at EgoHolding, available privately
+                to help you stay on top of bookkeeping, supplier invoices, payroll and reporting —
+                so you always know where your business stands.
+              </p>
+
+              <div class="flex flex-wrap items-center gap-4 pt-1">
+                <a href="#contact"
+                   class="inline-flex items-center gap-2 rounded-full border border-indigo-400/80 bg-gradient-to-r from-indigo-600 to-cyan-500 px-5 py-2 text-sm font-semibold text-white shadow-card transition hover:-translate-y-[1px] hover:shadow-[0_22px_55px_rgba(79,70,229,0.9)]">
+                  Book a discovery call
+                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-slate-950/60 text-xs">
+                    →
+                  </span>
+                </a>
+
+                <button
+                  id="view-work-btn"
+                  class="inline-flex items-center gap-2 rounded-full border border-slate-600/70 bg-slate-900/70 px-4 py-2 text-xs font-medium text-slate-300 transition hover:border-slate-400 hover:text-slate-100">
+                  View recent work
+                  <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-slate-800/80 text-[11px]">
+                    ⬛
+                  </span>
+                </button>
+              </div>
+
+              <div class="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
+                <div class="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-900/80 px-3 py-1">
+                  <span class="h-1.5 w-6 rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-indigo-400"></span>
+                  <span>Clear, on-time books</span>
+                </div>
+                <span class="hidden h-5 w-px bg-slate-700 md:inline-block"></span>
+                <span>General accounting • Accounts payable &amp; receivable • Payroll &amp; taxes</span>
+              </div>
+            </div>
+
+            <!-- Hero side card: About / Experience -->
+            <div class="glass-soft relative mt-1 overflow-hidden rounded-3xl border border-indigo-500/60 p-4 sm:p-5">
+              <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_0_0,rgba(129,140,248,0.45),transparent_55%)] opacity-60"></div>
+              <div class="relative space-y-4">
+                <div class="space-y-1">
+                  <p class="text-xs font-medium uppercase tracking-[0.22em] text-slate-300">
+                    About Me
+                  </p>
+                  <p class="text-[11px] text-slate-400">
+                    Accountant &amp; Accounts Payables specialist at EgoHolding, focused on transport and logistics.
+                  </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2.5 text-[11px]">
+                  <div class="rounded-2xl bg-slate-950/70 p-2.5">
+                    <p class="mb-1 text-slate-400">Main focus</p>
+                    <p class="text-xs font-semibold text-slate-50">
+                      General accounting<br />Accounts payable<br />Transport &amp; logistics
+                    </p>
+                  </div>
+                  <div class="rounded-2xl bg-slate-950/70 p-2.5">
+                    <p class="mb-1 text-slate-400">Work style</p>
+                    <p class="text-xs text-slate-50">
+                      Detail‑oriented, on‑time,<br />clear communication.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2.5 text-[11px]">
+                  <div class="rounded-2xl bg-slate-950/70 p-2.5">
+                    <p class="mb-1 text-slate-400">Tools</p>
+                    <p class="text-xs text-slate-50">
+                      Excel / Sheets<br />ERP systems<br />Email &amp; shared drives
+                    </p>
+                  </div>
+                  <div class="rounded-2xl bg-slate-950/70 p-2.5">
+                    <p class="mb-1 text-slate-400">Languages</p>
+                    <p class="text-xs text-slate-50">
+                      Serbian • English
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="fade-section mb-16 scroll-mt-20 md:mb-20 lg:mb-24" data-animate>
+        <div class="mb-6 flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-indigo-300">
+              Services
+            </p>
+            <h2 class="mt-1 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+              Focused accounting support for your day‑to‑day operations.
+            </h2>
+            <p class="mt-2 max-w-xl text-sm text-slate-300">
+              From basic bookkeeping to handling payables, payroll and reporting, you can plug me
+              into the parts of your finance workflow you don’t have time for.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-3">
+          <!-- Service 1 -->
+          <article
+            class="group glass relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-950/70 p-5 shadow-card transition hover:-translate-y-1 hover:border-indigo-400/80 hover:shadow-[0_22px_60px_rgba(15,23,42,0.95)]">
+            <div
+              class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-70 bg-[radial-gradient(circle_at_0_0,rgba(79,70,229,0.55),transparent_60%)]">
+            </div>
+            <div class="relative space-y-3">
+              <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/80 px-2.5 py-1 text-[11px] text-slate-300">
+                <span class="h-1.5 w-4 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400"></span>
+                General Accounting &amp; Bookkeeping
+              </div>
+              <h3 class="text-sm font-semibold text-slate-50">
+                Complete day‑to‑day accounting for small businesses.
+              </h3>
+              <p class="text-xs text-slate-300">
+                Set up and maintain your general ledger, record income and expenses, and prepare
+                clean monthly overviews you can actually read and use.
+              </p>
+              <ul class="mt-2 space-y-1.5 text-xs text-slate-300/90">
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Recording and categorising invoices, receipts and bank transactions
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Monthly and quarterly reports for owners and managers
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Service 2 -->
+          <article
+            class="group glass relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-950/70 p-5 shadow-card transition hover:-translate-y-1 hover:border-indigo-400/80 hover:shadow-[0_22px_60px_rgba(15,23,42,0.95)]">
+            <div
+              class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-70 bg-[radial-gradient(circle_at_0_0,rgba(8,47,73,0.9),transparent_60%)]">
+            </div>
+            <div class="relative space-y-3">
+              <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/80 px-2.5 py-1 text-[11px] text-slate-300">
+                <span class="h-1.5 w-4 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400"></span>
+                Accounts Payable &amp; Receivable
+              </div>
+              <h3 class="text-sm font-semibold text-slate-50">
+                Stay in control of what you owe and what you’re owed.
+              </h3>
+              <p class="text-xs text-slate-300">
+                Organise supplier invoices, track due dates, monitor unpaid customer invoices and
+                keep your cash flow predictable.
+              </p>
+              <ul class="mt-2 space-y-1.5 text-xs text-slate-300/90">
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Vendor invoice tracking, approvals and payment scheduling
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Customer invoicing and follow‑up on outstanding receivables
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Service 3 -->
+          <article
+            class="group glass relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-950/70 p-5 shadow-card transition hover:-translate-y-1 hover:border-indigo-400/80 hover:shadow-[0_22px_60px_rgba(15,23,42,0.95)]">
+            <div
+              class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-70 bg-[radial-gradient(circle_at_0_0,rgba(220,38,38,0.35),transparent_60%)]">
+            </div>
+            <div class="relative space-y-3">
+              <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/80 px-2.5 py-1 text-[11px] text-slate-300">
+                <span class="h-1.5 w-4 rounded-full bg-gradient-to-r from-rose-400 to-orange-400"></span>
+                Payroll &amp; Tax Services
+              </div>
+              <h3 class="text-sm font-semibold text-slate-50">
+                Accurate payslips and on‑time tax obligations.
+              </h3>
+              <p class="text-xs text-slate-300">
+                Help with payroll calculations, contributions and basic tax obligations,
+                so your team and the authorities are paid correctly and on time.
+              </p>
+              <ul class="mt-2 space-y-1.5 text-xs text-slate-300/90">
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Monthly gross/net salary calculations and contributions
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Coordination with your tax advisor or accountant for filings
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Service 4 -->
+          <article
+            class="group glass relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-950/70 p-5 shadow-card transition hover:-translate-y-1 hover:border-indigo-400/80 hover:shadow-[0_22px_60px_rgba(15,23,42,0.95)]">
+            <div
+              class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-70 bg-[radial-gradient(circle_at_0_0,rgba(56,189,248,0.5),transparent_60%)]">
+            </div>
+            <div class="relative space-y-3">
+              <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/80 px-2.5 py-1 text-[11px] text-slate-300">
+                <span class="h-1.5 w-4 rounded-full bg-gradient-to-r from-cyan-300 to-indigo-400"></span>
+                Financial Reporting &amp; Analysis
+              </div>
+              <h3 class="text-sm font-semibold text-slate-50">
+                Turn your numbers into simple, visual reports.
+              </h3>
+              <p class="text-xs text-slate-300">
+                Custom monthly or quarterly reports that show profit, costs and cash in a clear way,
+                so you can make decisions with confidence.
+              </p>
+              <ul class="mt-2 space-y-1.5 text-xs text-slate-300/90">
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Simple dashboards for revenue, expenses and cash position
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Comparison vs. previous periods and basic KPI tracking
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Service 5 -->
+          <article
+            class="group glass relative overflow-hidden rounded-2xl border border-slate-800/80 bg-slate-950/70 p-5 shadow-card transition hover:-translate-y-1 hover:border-indigo-400/80 hover:shadow-[0_22px_60px_rgba(15,23,42,0.95)]">
+            <div
+              class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-70 bg-[radial-gradient(circle_at_0_0,rgba(16,185,129,0.45),transparent_60%)]">
+            </div>
+            <div class="relative space-y-3">
+              <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/80 px-2.5 py-1 text-[11px] text-slate-300">
+                <span class="h-1.5 w-4 rounded-full bg-gradient-to-r from-emerald-300 to-cyan-400"></span>
+                Transport &amp; Logistics Consulting
+              </div>
+              <h3 class="text-sm font-semibold text-slate-50">
+                Use experience from EgoHolding in your own fleet.
+              </h3>
+              <p class="text-xs text-slate-300">
+                Optional consulting for transport and logistics businesses: better control of fuel,
+                tolls, maintenance and supplier invoices.
+              </p>
+              <ul class="mt-2 space-y-1.5 text-xs text-slate-300/90">
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Cost structure review for routes, vehicles and drivers
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-[3px] h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Practical suggestions to improve margins and cash flow
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section id="portfolio" class="fade-section mb-16 scroll-mt-20 md:mb-20 lg:mb-24" data-animate>
+        <div class="mb-6 flex items-center justify-between gap-4">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-indigo-300">
+              Portfolio
+            </p>
+            <h2 class="mt-1 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+              How I use accounting in practice.
+            </h2>
+            <p class="mt-2 max-w-xl text-sm text-slate-300">
+              A short overview of my work at EgoHolding and the type of responsibilities and
+              workflows I handle every day.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2">
+          <!-- Experience card 1 -->
+          <article
+            class="group glass relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 p-5 shadow-card transition hover:-translate-y-1 hover:border-indigo-400/80 hover:shadow-[0_24px_70px_rgba(15,23,42,0.98)]">
+            <div
+              class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-80 bg-[radial-gradient(circle_at_0_0,rgba(79,70,229,0.6),transparent_65%)]">
+            </div>
+            <div class="relative flex flex-col gap-3">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="text-sm font-semibold text-slate-50">
+                    EgoHolding — Accounting &amp; Accounts Payables
+                  </h3>
+                  <p class="mt-1 text-xs text-slate-300">
+                    Daily work on accounting and payables processes for a transport and logistics
+                    group: supplier invoices, approvals, posting and reconciliations.
+                  </p>
+                </div>
+                <div class="flex flex-col items-end gap-1 text-[11px] text-slate-400">
+                  <span class="rounded-full bg-slate-900/80 px-2 py-1">
+                    Transport &amp; logistics
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2 text-[10px]">
+                <span class="rounded-full bg-slate-900/90 px-2 py-1 text-slate-200">
+                  Supplier invoices &amp; approvals
+                </span>
+                <span class="rounded-full bg-slate-900/90 px-2 py-1 text-slate-200">
+                  General accounting entries
+                </span>
+                <span class="rounded-full bg-slate-900/90 px-2 py-1 text-slate-200">
+                  Reconciliations
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Experience card 2 -->
+          <article
+            class="group glass relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 p-5 shadow-card transition hover:-translate-y-1 hover:border-indigo-400/80 hover:shadow-[0_24px_70px_rgba(15,23,42,0.98)]">
+            <div
+              class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-80 bg-[radial-gradient(circle_at_0_0,rgba(8,47,73,0.85),transparent_65%)]">
+            </div>
+            <div class="relative flex flex-col gap-3">
+              <div class="flex items-start justify-between gap-3">
+                <div>
+                  <h3 class="text-sm font-semibold text-slate-50">
+                    EgoHolding — Transport &amp; Logistics Focus
+                  </h3>
+                  <p class="mt-1 text-xs text-slate-300">
+                    Working closely with operations to record and control costs related to fleet,
+                    fuel, tolls and other logistics‑specific expenses.
+                  </p>
+                </div>
+                <div class="flex flex-col items-end gap-1 text-[11px] text-slate-400">
+                  <span class="rounded-full bg-slate-900/80 px-2 py-1">
+                    Internal experience
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2 text-[10px]">
+                <span class="rounded-full bg-slate-900/90 px-2 py-1 text-slate-200">
+                  Cost tracking for vehicles
+                </span>
+                <span class="rounded-full bg-slate-900/90 px-2 py-1 text-slate-200">
+                  Vendor and contract management support
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Experience card 3 -->
+          <article
+            class="group glass relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 p-5 shadow-card transition hover:-translate-y-1 hover:border-indigo-400/80 hover:shadow-[0_24px_70px_rgba(15,23,42,0.98)] md:col-span-2">
+            <div
+              class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-80 bg-[radial-gradient(circle_at_0_0,rgba(52,211,153,0.7),transparent_65%)]">
+            </div>
+              <div class="relative flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+                <div class="max-w-xl">
+                  <h3 class="text-sm font-semibold text-slate-50">
+                    Reporting &amp; communication with management
+                  </h3>
+                  <p class="mt-1 text-xs text-slate-300">
+                    Preparing clear overviews and reports that summarise costs, open payables and
+                    key points for managers and owners.
+                  </p>
+                  <p class="mt-2 text-xs text-slate-300">
+                    This same approach is what I offer privately: simple, structured information
+                    that helps you understand your numbers and make day‑to‑day decisions.
+                  </p>
+                </div>
+                <div class="mt-3 flex flex-col items-start gap-2 text-[11px] text-slate-400 md:items-end">
+                  <div class="flex flex-wrap gap-2">
+                    <span class="rounded-full bg-slate-900/90 px-2 py-1 text-slate-200">
+                      Internal reports
+                    </span>
+                    <span class="rounded-full bg-slate-900/90 px-2 py-1 text-slate-200">
+                      Owner‑friendly summaries
+                    </span>
+                  </div>
+                </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="fade-section mb-10 scroll-mt-24 md:mb-14 lg:mb-16" data-animate>
+        <div class="grid gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] md:items-start">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-indigo-300">
+              Contact
+            </p>
+            <h2 class="mt-1 text-xl font-semibold tracking-tight text-slate-50 sm:text-2xl">
+              Tell me a bit about your business.
+            </h2>
+            <p class="mt-2 max-w-md text-sm text-slate-300">
+              Whether you run a small company, work as a freelancer or manage a fleet in transport,
+              share your situation and I’ll come back with a concrete suggestion.
+            </p>
+
+            <div class="mt-4 space-y-2 text-sm text-slate-300">
+              <div class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                <span>Available for ongoing or one‑off projects.</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                <span>Remote collaboration, documentation over email or shared drives.</span>
+              </div>
+            </div>
+
+            <div class="mt-11 grid max-w-lg gap-3 text-sm text-slate-300 sm:grid-cols-2">
+              <div class="flex items-center gap-3 rounded-2xl border border-slate-700/80 bg-slate-950/80 px-3 py-2.5">
+                <div class="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-300">
+                  <span class="text-sm">✉</span>
+                </div>
+                <div>
+                  <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400">
+                    Email
+                  </p>
+                  <a href="mailto:lazarnikolic@gmail.com"
+                     class="text-xs text-cyan-300 hover:text-cyan-200 break-all">
+                    lazarnikolic18100@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 rounded-2xl border border-slate-700/80 bg-slate-950/80 px-3 py-2.5">
+                <div class="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-300">
+                  <span class="text-sm">☎</span>
+                </div>
+                <div>
+                  <p class="text-[11px] font-medium uppercase tracking-[0.18em] text-slate-400">
+                    Phone
+                  </p>
+                  <a href="tel:+381601234567"
+                     class="text-xs text-emerald-300 hover:text-emerald-200">
+                    + 381 60 8189 988
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <div class="glass rounded-2xl border border-slate-800 bg-slate-950/80 p-5 shadow-card sm:p-6">
+            <form id="contact-form"
+                action="https://formspree.io/f/mlgpngbj"
+                method="POST"
+                class="space-y-4">
+              <div>
+                <label for="name" class="mb-1.5 block text-xs font-medium text-slate-200">
+                  Full name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  class="w-full rounded-xl border border-slate-700/80 bg-slate-950/80 px-3 py-2.5 text-sm text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400" placeholder="Alex Rivera" />
+              </div>
+
+              <div>
+                <label for="email" class="mb-1.5 block text-xs font-medium text-slate-200">
+                  Work email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  class="w-full rounded-xl border border-slate-700/80 bg-slate-950/80 px-3 py-2.5 text-sm text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400" placeholder="you@company.com" />
+              </div>
+
+              <div>
+                <label for="message" class="mb-1.5 block text-xs font-medium text-slate-200">
+                  How can we help?
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="4"
+                  required
+                  class="w-full rounded-xl border border-slate-700/80 bg-slate-950/80 px-3 py-2.5 text-sm text-slate-50 outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400" placeholder="Tell us about your current setup, challenges and goals."></textarea>
+              </div>
+
+              <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+                <button
+                  type="submit"
+                  class="inline-flex items-center gap-2 rounded-full border border-indigo-400/90 bg-gradient-to-r from-indigo-600 to-cyan-500 px-5 py-2 text-sm font-semibold text-white shadow-card transition hover:-translate-y-[1px] hover:shadow-[0_22px_55px_rgba(79,70,229,0.9)]">
+                  Send message
+                  <span class="inline-flex h-6 w-6 items-center justify-center rounded-full border border-white/10 bg-slate-950/60 text-xs">
+                    ↗
+                  </span>
+                </button>
+                <p class="text-[11px] text-slate-400">
+                  By submitting, you agree to our privacy policy.
+                </p>
+              </div>
+
+              <p id="form-status" class="text-[11px] text-emerald-400/90"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/80 bg-slate-950/80">
+        <div class="mx-auto flex max-w-6xl flex-col items-center justify-center gap-3 px-4 py-4 text-[11px] text-slate-400 sm:flex-row sm:justify-center sm:items-center sm:px-6 lg:px-8">
+        <p>
+          © <span id="year"></span> Aleksa Zivkovic. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JS: scroll animations + simple form handling -->
+  <script src="script.js"></script>
+</body>
+</html>
